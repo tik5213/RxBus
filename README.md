@@ -2,7 +2,7 @@
 
 RxBus based on RxJava
 
-#Dependency
+# Dependency
 
 Gradle
 
@@ -29,7 +29,7 @@ lvy
 </dependency>
 ```
 
-#Usage
+# Usage
 
 1. Define events:
 
