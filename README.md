@@ -1,7 +1,9 @@
 # RxBus
+
 RxBus based on RxJava
 
 #Dependency
+
 Gradle
 
 ```gradle
@@ -28,6 +30,7 @@ lvy
 ```
 
 #Usage
+
 1. Define events:
 
     ```java  
