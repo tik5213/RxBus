@@ -24,3 +24,6 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//如果需要向bintray发布某个模块，可将下面对应的值设置为true
+tasks.getByPath(":rxbus:bintrayUpload").enabled = false

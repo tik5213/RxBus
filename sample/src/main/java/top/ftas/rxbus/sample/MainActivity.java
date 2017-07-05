@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import top.ftas.rxbus.RxBus;
 import top.ftas.rxbus.Subscribe;
@@ -37,7 +38,13 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	@Subscribe(threadMode = ThreadMode.IO)
-	public void onSimpleMessage(SimpleMessageEvent event){
+	public void onSimpleMessage(final SimpleMessageEvent event){
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				Toast.makeText(MainActivity.this,event.getMessage(),Toast.LENGTH_LONG).show();
+			}
+		});
 		PrintUtil.print(event.getMessage());
 	}
 
